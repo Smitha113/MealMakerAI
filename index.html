@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recipe Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="intro-screen" id="intro-screen">
+        <h1>Meal Maker AI</h1>
+        <p class="subtitle">Transform your ingredients into culinary masterpieces</p>
+        <p class="subtitle" style="margin-top: 20px; font-size: 1rem; opacity: 0.6;">Click anywhere to start</p>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Meal Maker AI</h1>
+            <p class="subtitle">Transform your ingredients into culinary masterpieces</p>
+        </header>
+
+        <main>
+            <div class="input-container">
+                <label for="ingredients">What ingredients do you have?</label>
+                <textarea 
+                    id="ingredients" 
+                    placeholder="Enter ingredients separated by commas (e.g., chicken, rice, tomatoes)"
+                ></textarea>
+
+                <div class="preferences-container">
+                    <div class="preference-group">
+                        <h3>Cooking Method</h3>
+                        <select id="cooking-method">
+                            <option value="any">Any Method</option>
+                            <option value="stove">Stove Top</option>
+                            <option value="oven">Oven</option>
+                            <option value="no-cook">No Cooking Required</option>
+                            <option value="microwave">Microwave Only</option>
+                        </select>
+                    </div>
+
+                    <div class="preference-group">
+                        <h3>Dietary Preference</h3>
+                        <select id="dietary-preference">
+                            <option value="any">Any Diet</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="non-veg">Non-Vegetarian</option>
+                        </select>
+                    </div>
+
+                    <div class="preference-group">
+                        <h3>Spice Level</h3>
+                        <select id="spice-level">
+                            <option value="any">Any Level</option>
+                            <option value="mild">Mild</option>
+                            <option value="medium">Medium</option>
+                            <option value="spicy">Spicy</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="generateRecipe()" id="generate-btn">
+                    <span class="btn-text">Generate Recipe</span>
+                    <div class="loader" style="display: none;"></div>
+                </button>
+            </div>
+
+            <div class="recipe-container">
+                <div id="result" class="recipe-result"> 
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+</html>
